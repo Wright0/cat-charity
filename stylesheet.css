@@ -1,0 +1,301 @@
+:root {
+    --yellow: #DC8C1F;
+    --white: #f8f8ff;
+    --dark-blue: #0A1045;
+    --teal: #246A73;
+  }
+
+body{
+    margin:0px;
+    background-color:var(--white);
+    color:var(--blue);
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+header {
+    border-bottom: solid 0.5rem var(--yellow);
+    padding: 0.5rem;
+}
+
+header p{
+    padding: 0.8rem 0rem;
+    margin:0px;
+}
+
+header, 
+.more-info{
+    background-color:var(--teal);
+    color:var(--white);
+    text-align: center;
+}
+
+header > h1,
+.more-info > h1 {
+    font-size: 2.5rem;
+    padding:1.5rem 0rem 1rem 0rem;
+    margin:0px;  
+}
+
+header > h2,
+.more-info > h2 {
+    padding:0.3rem;
+    margin: 1%;
+}
+
+main h2 {
+    margin: 1rem 0rem;
+}
+
+.about-us {
+    background-color: var(--yellow);
+    border-bottom: solid 1rem var(--yellow);
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'catpic     about-us    catpic2';
+}
+
+.about-us h2 {
+    font-size:2rem;
+}
+
+.about-us article {
+    background-color: var(--white);
+}
+
+.about-us img {
+    width: 100%;
+    align-self: center;
+}
+
+.about-us article{
+    padding:2rem;
+    grid-area:about-us;
+}
+
+.about-us img.cat1 {
+    grid-area:catpic
+}
+
+.about-us img.cat2 {
+    grid-area:catpic2
+}
+
+.services {
+    text-align: center;
+    background-color: var(--white);
+    display: grid;
+    grid-template-areas:
+      'title     title'
+      'rescue    rehome'
+      'donate    donate';
+}
+
+.services .rescue {
+    grid-area: rescue;
+}
+
+.services .rehome{
+    grid-area: rehome;
+}
+
+.services h2 {
+    grid-area: title;
+    text-align: center;
+    font-size:2rem;
+    margin:1rem 0px 2rem 0px;
+}
+
+.services .rescue,
+.services .rehome
+ {
+    width:80%;
+    min-height:500px;
+    margin:auto;
+    padding:0rem 1.5rem;
+}
+
+.shadow {
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  }
+
+.services img {
+    margin:2rem 0rem 0rem 0rem;
+    width: 20%;
+}
+
+.services > p{
+    font-size: 1.2rem;
+    width: 70%;
+    margin:3rem auto;
+    grid-area:donate;
+    border-top: solid 2px var(--yellow);
+    padding:0.7rem;
+}
+
+.more-info {
+    padding:1rem 0rem;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    'contact    hours     address'
+}
+
+.more-info p {
+    padding: 0rem 1rem;
+}
+
+.address{
+    grid-area:address;
+}
+
+.address iframe {
+    width:80%;
+    height:200px;
+}
+
+.contact{
+    grid-area:contact
+}
+
+.contact > a > img {
+    height:2rem;
+}
+
+.hours {
+    grid-area:hours;
+}
+
+.hours dd {
+    margin:0px
+}
+
+.hours > dl > dt{
+    text-align: end;
+}
+
+.hours > dl > dd{
+    padding: 0rem 0.5rem;
+    text-align:start;
+}
+
+.hours > dl{
+    grid-area:hours;
+    display:grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+footer .credit{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+footer .credit p {
+    opacity:0.6;
+    margin: 0.5rem 2rem;
+}
+
+footer .credit p:hover {
+    opacity:1;
+}
+
+footer .credit a {
+    font-weight: 700;
+    color:var(--blue);
+    text-decoration: none;
+}
+
+@media (max-width:1050px){
+
+    .about-us {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          'catpic     catpic2'
+          'about-us   about-us';
+    }
+
+    .services .rescue,
+    .services .rehome {
+        min-height:550px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .more-info {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        'contact  hours'
+        'address  address';
+    }
+
+    .more-info iframe {
+        width:80%; 
+        height:350px;
+    }
+  }
+
+  @media (max-width: 750px){
+
+    .services .rescue,
+    .services .rehome
+    {
+        width:70%;
+        margin: 1rem auto;
+    }
+
+    .services {
+      grid-template-areas:
+      'title'
+      'rescue'
+      'rehome'
+      'donate';
+    }
+  }
+
+  @media (max-width: 600px) {
+
+    header h1{
+        font-size: 2rem;
+    }
+
+    .about-us {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          'catpic'
+          'about-us'
+          'catpic2';
+    }
+
+    .about-us h2 {
+        font-size:2rem;
+        text-align: center;
+    }
+
+
+    .more-info {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'header'
+        'contact'
+        'hours'
+        'address';
+    }
+
+    .more-info iframe {
+        width:80%; 
+        height:300px;
+  }
+
+  footer .credit{
+      flex-direction: column;
+      align-items: center;
+  }
+}
